@@ -1,0 +1,134 @@
+@import "variable";
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+html{
+    font-size: $texte;
+}
+small{
+    flex: 1;
+    width: 30%;
+    margin: 1rem;
+    border: solid green;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E2337;
+}
+.banniere-titre{
+    margin-bottom: 1rem;
+    color:whitesmoke;
+}
+/*FICHE PRODUIT*/
+.produit-container{
+    width: 80%;
+    background-color: white;
+    color: grey;
+    display: flex;
+    box-shadow: 7px 7px 2px 1px rgba(162, 162, 182, 0.2);
+}
+/*IMAGES PRODUIT A GAUCHE*/
+.produit-images{
+    flex: 1;
+}
+/*l'image ne dépasse pas de son contenant */
+.full-img-container{
+    height: 350px;
+    overflow: hidden;
+}
+/*l'image est complètement visible dans sa largeur*/
+#full{
+    max-width: 100%;
+    z-index: 1;
+}
+/*flex pour positionner les éléments
+en colonne sur la version mobile
+*/
+.vignettes-container{
+    display: flex;
+    .small{
+        justify-content: space-around;
+        flex: 1;
+        width: 65%;
+        margin: 1rem;
+    }
+}
+
+/*INFOS PRODUIT A DROITE*/
+.produit-infos{
+    flex: 1;
+    padding: 2rem;
+}
+h1 {
+    font-size: 20px;
+    .produit-titre{
+        font-size: 10px;
+        margin: 2rem 0;
+    }
+}
+
+.description{
+    flex-direction: column;
+    margin: 0px 0 30px 0;
+    span{
+        text-decoration: underline;
+        a{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px 0 10px 0;
+            align-items: flex-end;
+        }
+    }
+}
+
+button{
+        background-color: rgb(0, 0, 0);
+        color: whitesmoke;
+        padding: 2rem;
+        outline: none;
+        border: none;
+        margin: 2 rem 0;
+}
+
+p {
+    display: flex;
+    margin: 10px 0 10px 0;
+}
+
+.produit-prix{
+    flex-direction:row;
+    align-items: end;
+    font-weight: bold;
+    padding-right: 25px;
+    font-size: 12px;
+    margin: 30px 0 30px 0;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        height: auto;/*annule la height:100vh*/
+    }
+    .produit-container{
+        flex-direction: column;
+    }
+    .full-img-container{
+        height: auto;/*annule la height:350pixels*/
+    }
+    .vignettes-container{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .small{
+        width: 50%;
+    }
+}
